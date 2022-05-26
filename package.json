@@ -1,0 +1,20 @@
+{
+  "name": "the_caravan_discord_bot",
+  "scripts": {
+    "build": "tsc",
+    "dev": "NODE_ENV=dev ts-node .",
+    "start": "NODE_ENV=production node ."
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "@discordjs/voice": "^0.9.0",
+    "discord-player": "^5.2.2",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "ffmpeg-static": "^4.4.1"
+  },
+  "type": "module",
+  "engines": {
+    "node": "14.x"
+  }
+}
