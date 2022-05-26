@@ -1,8 +1,7 @@
 {
   "name": "the_caravan_discord_bot",
   "scripts": {
-    "build": "tsc",
-    "dev": "NODE_ENV=dev ts-node .",
+    "dev": "NODE_ENV=dev node .",
     "start": "NODE_ENV=production node .",
     "heroku-postbuild": "npm run dev"
   },
