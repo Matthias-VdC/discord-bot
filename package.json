@@ -3,7 +3,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "NODE_ENV=dev ts-node .",
-    "start": "NODE_ENV=production node ."
+    "start": "NODE_ENV=production node .",
+    "heroku-postbuild": "npm run dev"
   },
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
@@ -15,6 +16,6 @@
   },
   "type": "module",
   "engines": {
-    "node": "16.x"
+    "node": "14.x"
   }
 }
