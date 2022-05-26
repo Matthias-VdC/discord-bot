@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "NODE_ENV=dev node .",
     "start": "NODE_ENV=production node .",
-    "heroku-postbuild": "npm run dev"
+    "heroku-postbuild": "npm start"
   },
   "dependencies": {
     "@discordjs/opus": "^0.5.3",

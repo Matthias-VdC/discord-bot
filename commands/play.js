@@ -14,18 +14,18 @@ export default async function play(message) {
         selfDeaf: true,
         selfMute: false,
     });
-    const songUrl = message.content.split(" ");
-    console.log(songUrl);
-    const songInfo = await ytdl.getInfo(songUrl[1]);
-    const stream = await ytdl(songUrl[1], { filter: 'audioonly', dlChunkSize: 0, quality: "lowest" });
-    const song = {
-        title: songInfo.videoDetails.title,
-        author: songInfo.videoDetails.author.name,
-        url: songInfo.videoDetails.video_url,
-    }
-    const audioResource = createAudioResource(stream, { inlineVolume: true, dlChunkSize: 0 });
-    const audioPlayer = createAudioPlayer();
     try {
+        const songUrl = message.content.split(" ");
+        console.log(songUrl);
+        const songInfo = await ytdl.getInfo(songUrl[1]);
+        const stream = await ytdl(songUrl[1], { filter: 'audioonly', dlChunkSize: 0, quality: "lowest" });
+        const song = {
+            title: songInfo.videoDetails.title,
+            author: songInfo.videoDetails.author.name,
+            url: songInfo.videoDetails.video_url,
+        }
+        const audioResource = createAudioResource(stream, { inlineVolume: true, dlChunkSize: 0 });
+        const audioPlayer = createAudioPlayer();
         console.log("Joining voice channel!");
         await entersState(connection, VoiceConnectionStatus.Ready, 30e3);
         connection.subscribe(audioPlayer);
